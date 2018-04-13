@@ -5,8 +5,8 @@ ip netns exec nlb_client ip addr add 10.10.10.2/25 dev veth-nlbc-ns
 
 ip link set dev veth-nlbc-host up
 ip netns exec nlb_client ip link set address 00:00:c8:12:12:12 dev veth-nlbc-ns
-ip netns exec nlb_client arp -s 10.10.10.1 00:00:00:11:22:41
 ip netns exec nlb_client ip link set veth-nlbc-ns up
+ip netns exec nlb_client arp -s 10.10.10.1 00:00:00:11:22:41
 
 ip netns add nlb_server
 ip link add name veth-nlbs-host type veth peer name veth-nlbs-ns
